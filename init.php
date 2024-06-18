@@ -132,7 +132,7 @@ $conn->close();
             <?php foreach ($ejer as $r) { 
                 $p = round(100*$r["hechos"]/$r["total"]); ?>
                 <tr>
-                    <td><?php echo "<a href='ejer.php?&ej=".$r["ejer"]."'>".$r["ejer"]."</a>";?></td>
+                    <td><?php echo "<a href='ejer.php?ej=".$r["ejer"]."'>".$r["ejer"]."</a>";?></td>
                     <td><div class='text-center'><?php echo $r["hechos"]; ?></div></td>
                     <td><div class='text-center'><?php echo $r["total"]; ?></div></td>
                     <td><div class='text-center'><?php echo $p; ?></div></td>

@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $_SESSION['
     $ej = clear_input($_GET["ej"]);
 
     // obtener el listado de alumnos
-    $stmt = $conn -> prepare("SELECT a.dni, a.curso, a.nombre, 
+    $stmt = $conn -> prepare("SELECT a.dni, a.curso, CONCAT_WS(' ',a.nom,a.ape1,a.ape2) as nombre, 
 	        IFNULL(h.ejer,?) AS ejer, IFNULL(h.hecho,0) AS hecho
         FROM alumnos a 
         LEFT JOIN hecho h ON (a.dni = h.dni AND a.curso = h.curso AND h.ejer = ?)
